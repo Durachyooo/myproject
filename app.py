@@ -74,4 +74,5 @@ iface = gr.Interface(
 # -----------------------------
 # 4. Запуск для Render
 # -----------------------------
-iface.launch(server_name="0.0.0.0", server_port=8080)
+port = int(os.environ.get("PORT", 10000))  # Render задает переменную PORT
+iface.launch(server_name="0.0.0.0", server_port=port, share=False)
